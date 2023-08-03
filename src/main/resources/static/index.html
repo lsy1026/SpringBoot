@@ -22,7 +22,7 @@
         
         <section id="info">
 	        <h1>hi</h1>
-	        <p>hello world.</p>
+	        <p>hello, boot.</p>
 	    </section>
 
 	    <section class="index" id="contact">
@@ -61,48 +61,9 @@
         <p>Contact: lsy1026@mediazen.co.kr</p>
     </footer>
     
+    <!-- Script -->
+    <!-- Script는 최적화를 위해 body하단에 위치 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-		// Ensure the body and html elements have 100% height
-        //document.body.style.height = '100%';
-        //document.documentElement.style.height = '100%';
-        
-        //const mainElement = document.getElementById('main');
-        const mainElement = document.getElementsByClassName('main');
-        
-        const MAX_HEIGHT = 3000;
-        var newHeight = 0;
-        let currentHeight = mainElement.clientHeight;
-        
-        const waves = document.querySelector('.waves');
-
-        //	Add scroll event listener
-        window.addEventListener('scroll', function() {
-			console.log("scroll Y : " + window.scrollY);
-
-			//	infinity scroll
-		    //mainElement.style.height = `${window.scrollY + 1010}px`;
-		    
-		    //	MAX height used scroll
-		    newHeight = Math.min(currentHeight + window.scrollY, MAX_HEIGHT);
-            mainElement.style.height = `${newHeight}px`;
-			
-            //	wave down scroll
-            //waves.style.transform = `translate3d(0, ${window.scrollY * 0.5}px, 0)`;
-        });
-    </script>
-    <!--
-    <script src="indexScript.js"></script>
-    -->
-    <script>
-        $.ajax({
-            type: "GET",
-            url: "/valueTest",
-            success: (data) => {
-            	console.log(data);
-            	$('#contents').html(data);
-            }
-        });
-    </script>
+    <script src="index.js"></script>
 </body>
 </html>

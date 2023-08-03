@@ -23,13 +23,12 @@ p {
 
 div.main {
 	width: 70%;
-	float: right;
-    height: 1000px; /* 절대적인 높이 값 */
+    height: 1000px;
 }
 
 div.sidenav {
 	width: 30%;
-	float: left;
+	float: left;	/* navigation이 좌측에 있을 수 있는 이유 */
 	height: 1000px;
     background: rgba(255, 105, 180, 0);
 }
