@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT로 만든 Index</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<!-- Header -->
+    <header>
+        <h1>BlackPink</h1>
+    </header>
+
+	<!-- Navigation -->
+    <div class="sidenav">
+        <a href="#">TEMP</a>
+        <a href="#">Theme</a>
+        <a href="#">Theme</a>
+        
+        <section id="info">
+	        <h1>hi</h1>
+	        <p>hello world.</p>
+	    </section>
+
+	    <section class="index" id="contact">
+	        <h1>index</h1>
+	        	<div><a href="/roulette" target="_self">roulette Page</a></div>
+				<div><a href="/section" target="_self">section Page</a></div>
+	    </section>
+    </div>
+	
+	<!-- Main -->
+    <div class="main">
+        <h1>Welcome to <span style="color: #fff;">My</span> BlackPink</h1>
+        <p>This is a <span style="color: #fff;">simple</span> index page.</p>
+        <img src="img/black_pink.jpg" alt="Placeholder Image">
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="waves">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+					<!--x축 크기만큼 파장이 달라짐.-->
+					<!--y축 크기만큼 높이가 달라짐.-->
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                    <use xlink:href="#gentle-wave" x="73" y="0" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="99" y="0" fill="rgba(255,255,255,0.3)" />
+                    <!--<use xlink:href="#gentle-wave" x="100" y="7" fill="#fff" />-->
+                </g>
+            </svg>
+        </div>
+        <p>&copy; 2023 My BlackPink. All rights reserved.</p>
+        <p>Contact: lsy1026@mediazen.co.kr</p>
+    </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+		// Ensure the body and html elements have 100% height
+        //document.body.style.height = '100%';
+        //document.documentElement.style.height = '100%';
+        
+        //const mainElement = document.getElementById('main');
+        const mainElement = document.getElementsByClassName('main');
+        
+        const MAX_HEIGHT = 3000;
+        var newHeight = 0;
+        let currentHeight = mainElement.clientHeight;
+        
+        const waves = document.querySelector('.waves');
+
+        //	Add scroll event listener
+        window.addEventListener('scroll', function() {
+			console.log("scroll Y : " + window.scrollY);
+
+			//	infinity scroll
+		    //mainElement.style.height = `${window.scrollY + 1010}px`;
+		    
+		    //	MAX height used scroll
+		    newHeight = Math.min(currentHeight + window.scrollY, MAX_HEIGHT);
+            mainElement.style.height = `${newHeight}px`;
+			
+            //	wave down scroll
+            //waves.style.transform = `translate3d(0, ${window.scrollY * 0.5}px, 0)`;
+        });
+    </script>
+    <!--
+    <script src="indexScript.js"></script>
+    -->
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "/valueTest",
+            success: (data) => {
+            	console.log(data);
+            	$('#contents').html(data);
+            }
+        });
+    </script>
+</body>
+</html>
