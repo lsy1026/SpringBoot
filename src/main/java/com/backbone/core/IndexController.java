@@ -35,4 +35,12 @@ public class IndexController {
         return "section.html";
     }
     
+    @RequestMapping("/uploadform")	//https://goodteacher.tistory.com/351
+    public String uploadform(){
+        System.out.println("/uploadform");
+        return "uploadform.html";
+    }
+    
+    //https://hello-bryan.tistory.com/330
+    
 }
