@@ -1,0 +1,119 @@
+html {
+	height: 100%;
+	margin: 0; /* 브라우저 기본 마진 제거 */
+}
+body {
+	width: 100%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #e0e0e0;
+    color: #ff69b4;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+h1 {
+    color: #ff69b4;
+}
+
+p {
+    color: #ff69b4;
+}
+
+div.main {
+	width: 70%;
+    height: 1000px;
+}
+
+div.sidenav {
+	width: 30%;
+	float: left;	/* navigation이 좌측에 있을 수 있는 이유 */
+	height: 1000px;
+    background: rgba(255, 105, 180, 0);
+}
+
+div.sidenav a {
+    color: #ff69b4;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+div.sidenav a:hover {
+    background-color: #ff1493;
+    color: #fff;
+}
+
+img {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ff69b4;
+    border-radius: 5px;
+}
+
+footer {
+    background: transparent;
+    padding: 10px;
+    width: 100%;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    color: #fff;
+    margin: 5px 0;
+}
+
+/* Waves 스타일 추가 */
+.waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15vh;
+    min-height: 100px;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.parallax {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+
+/* Wave 애니메이션 속도 조절 */
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+.waves svg {
+    display: block;
+    width: 100%;
+    height: 15vh;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
