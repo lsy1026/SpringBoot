@@ -18,7 +18,7 @@ public class IndexController {
     @GetMapping("/bp")
     public String indexBP() {
     	System.out.println(CLASS_NAME);
-        return "blackPink/index.html";
+        return "blackPink/index_BP.html";
     }
     
     @ResponseBody
