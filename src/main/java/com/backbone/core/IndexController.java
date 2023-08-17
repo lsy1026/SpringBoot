@@ -12,7 +12,13 @@ public class IndexController {
     @GetMapping("/")
     public String index() {
     	System.out.println(CLASS_NAME);
-        return "index.html";
+        return "index/index.html";
+    }
+    
+    @GetMapping("/bp")
+    public String indexBP() {
+    	System.out.println(CLASS_NAME);
+        return "blackPink/index.html";
     }
     
     @ResponseBody
