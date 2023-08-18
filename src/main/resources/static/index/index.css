@@ -65,7 +65,7 @@ div.sidenav.show {
 	/* 모바일용 sidenav style */
 	div.sidenav {
 	    position: fixed;
-	    left: -30%; /* 처음에는 숨김 */
+	    left: -50%; /* 처음에는 숨김 */
 	    transition: left 0.3s ease-in-out;
 	}
 	
@@ -81,6 +81,7 @@ div.sidenav.show {
     /* 모바일에서 사이드 내비게이션을 보임 */
     .sidenav.show {
         left: 0;
+        width: 70%;
         background-color: #e0e0e0;
     }
 }
