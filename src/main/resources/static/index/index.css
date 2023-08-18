@@ -44,6 +44,47 @@ div.sidenav a:hover {
     color: #fff;
 }
 
+div.sidenav.show {
+    left: 0; /* 사이드 내비게이션을 보임 */
+}
+
+.menu-button {
+    display: none; /* 초기에 메뉴 버튼을 숨김 */
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background-color: #ff69b4;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+	/* 모바일용 sidenav style */
+	div.sidenav {
+	    position: fixed;
+	    left: -30%; /* 처음에는 숨김 */
+	    transition: left 0.3s ease-in-out;
+	}
+	
+	div.main {
+		margin: 0 auto;
+	}
+    
+    /* 모바일에서 메뉴 버튼을 표시 */
+    .menu-button {
+        display: block;
+    }
+    
+    /* 모바일에서 사이드 내비게이션을 보임 */
+    .sidenav.show {
+        left: 0;
+        background-color: #e0e0e0;
+    }
+}
+
 img {
     width: 300px;
     height: 200px;
