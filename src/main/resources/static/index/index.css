@@ -30,6 +30,7 @@ div.sidenav {
 	width: 30%;
 	float: left;	/* navigation이 좌측에 있을 수 있는 이유 */
 	height: 1000px;
+	margin-top: 100px;
     background: rgba(255, 105, 180, 0);
 }
 
@@ -64,8 +65,9 @@ div.sidenav.show {
 @media (max-width: 768px) {
 	/* 모바일용 sidenav style */
 	div.sidenav {
+		margin-top: 0px;
 	    position: fixed;
-	    left: -50%; /* 처음에는 숨김 */
+	    left: -30%; /* 초기에 메뉴를 숨김 */
 	    transition: left 0.3s ease-in-out;
 	}
 	
@@ -80,6 +82,7 @@ div.sidenav.show {
     
     /* 모바일에서 사이드 내비게이션을 보임 */
     .sidenav.show {
+		display: block;
         left: 0;
         width: 70%;
         background-color: #e0e0e0;
@@ -104,13 +107,41 @@ footer {
 }
 
 footer p {
-    color: #fff;
+	/* position && z-index 페어로 사용 */
+	position: relative;
+	z-index: 2; /* 큰 값이 위로 오버레이 */
+	
+    color: #ff69b4;
     margin: 5px 0;
 }
 
-/* Waves 스타일 추가 */
+/* social-icon style */
+.social-icons .social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  background-color: #495057;
+  color: #fff;
+  border-radius: 100%;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-right: 1.5rem;
+  margin-bottom: 30px;
+}
+.social-icons .social-icon:last-child {
+  margin-right: 0;
+}
+.social-icons .social-icon:hover {
+  background-color: #bd5d38;
+}
+
+/* Waves style */
 .waves {
     position: absolute;
+    z-index: 1;
+    
     bottom: 0;
     left: 0;
     width: 100%;
