@@ -67,7 +67,7 @@ div.sidenav.show {
 	div.sidenav {
 		margin-top: 0px;
 	    position: fixed;
-	    left: -30%; /* 초기에 메뉴를 숨김 */
+	    left: -1000px; /* 초기에 메뉴를 숨김 */
 	    transition: left 0.3s ease-in-out;
 	}
 	
