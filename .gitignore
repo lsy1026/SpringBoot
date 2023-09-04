@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ### DB connection info ###
-*/application-db.properties
+application-db.properties
