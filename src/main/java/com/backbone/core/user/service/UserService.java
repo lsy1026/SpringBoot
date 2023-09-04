@@ -12,6 +12,11 @@ import com.backbone.core.user.mapper.UserMapper;
 public class UserService {
 	@Autowired(required=true)
 	private UserMapper userMapper;
+	
+	public List<Map<String, Object>> getAllUser() {
+		System.out.println("UserService getAllUser()");
+        return userMapper.getAllUser();
+    }
 
 	public List<Map<String, Object>> getUsersByUsername(String username) {
         return userMapper.getUsersByUsername(username);
