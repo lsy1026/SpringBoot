@@ -4,14 +4,34 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class IndexController {
 	final String CLASS_NAME = "[IndexController]";
 
     @GetMapping("/")
-    public String index() {
+    public String index(HttpServletRequest request) {
     	System.out.println(CLASS_NAME);
+    	
+    	// device check
+    	String userAgent = request.getHeader("User-Agent").toUpperCase();
+    	String device = "";
+    	
+    	if(userAgent.indexOf("MOBILE") > -1)
+    		device = "MOBILE";
+    	else if(userAgent.indexOf("TABLET") > -1)
+    		device = "TABLET";
+    	else if(userAgent.indexOf("WINDOWS") > -1)
+    		device = "WINDOWS";
+    	else
+    		device = "UNKOWN DEVICE!!";
+    	
+    	// client logs
+    	System.out.println("- clientIp/clientPort	: " + request.getRemoteAddr() + "/" + request.getRemotePort());
+    	System.out.println("- userAgent		: " + userAgent);
+    	System.out.println("- device		: " + device);
+    	
         return "index/index.html";
     }
     
